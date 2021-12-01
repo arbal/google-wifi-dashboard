@@ -19,6 +19,7 @@ export function createStore() {
                 state.isLoggedIn = payload
             },
             setRefreshToken(state, payload) {
+                localStorage.setItem("refresh_token", payload)
                 state.refreshToken = payload
             },
             setGroup(state, payload) {

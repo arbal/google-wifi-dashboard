@@ -1,6 +1,7 @@
 <template>
   <div class="deviceRow">
     <p class="title">{{ device.friendlyName }}</p>
+    <p class="subtitle">{{device.ipAddress}}</p>
     <p class="subtitle" :style="{ 'font-weight': 'bold' }">
       {{ device.friendlyType }}
     </p>

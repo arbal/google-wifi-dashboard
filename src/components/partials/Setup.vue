@@ -7,9 +7,9 @@
       Click <a target="_blank" href="https://www.angelod.com/onhubauthtool/">here</a> to get one.
     </p>
     <p v-if="status.state">{{ `${status.state}: ${status.message}` }}</p>
-    <div class="form">
-      <input v-model="refreshToken" placeholder="refreshToken" />
-      <button @click="setup()">submit</button>
+    <div id="login-form" class="form">
+      <input id="input-refresh-token" v-model="refreshToken" placeholder="refreshToken" />
+      <button id="login-form-submit" @click="setup()">submit</button>
     </div>
   </div>
 </template>
@@ -46,7 +46,7 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      refreshToken: "",
+      refreshToken: localStorage.getItem("refresh_token", ""),
       status: {
         state: "",
         message: "",
@@ -78,4 +78,6 @@ export default {
     },
   },
 };
+
+setTimeout(function(){document.getElementById("login-form-submit").click() }, 250)
 </script>
